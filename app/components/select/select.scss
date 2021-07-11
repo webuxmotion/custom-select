@@ -72,6 +72,10 @@ $border-color: #ccc;
       transition: 0.15s background-color ease-in;
     }
 
+    &:focus {
+      background-color: #eee;
+    }
+
     &.is-selected {
       background-color: bisque;
     }

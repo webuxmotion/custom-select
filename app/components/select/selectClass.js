@@ -37,6 +37,19 @@ export class Select {
     }
   }
 
+  pressHandler(event) {
+    const keyName = event.key;
+    
+    if (keyName == " ") {
+      this.toggle();
+    } else if (keyName == "ArrowDown") {
+      console.log(keyName, this.options.data);
+      this.element.querySelector(`[data-id="2"]`).focus();
+    } else if (keyName == "ArrowUp") {
+      console.log(keyName, this.options.data);
+    }
+  }
+
   get current() {
     return this.options.data.find(item => item.id === this.selectedId);
   }
@@ -62,12 +75,15 @@ export class Select {
 
   setup() {
     this.clickHandler = this.clickHandler.bind(this);
+    this.pressHandler = this.pressHandler.bind(this);
     this.element.addEventListener('click', this.clickHandler);
+    this.element.addEventListener('keydown', this.pressHandler);
     this.inputElement = this.element.querySelector('[data-type="inputValue"]');
   }
 
   destroy() {
     this.element.removeEventListener('click', this.clickHandler);
+    this.element.removeEventListener('keydown', this.pressHandler);
     this.element.innerHTML = '';
   }
 }
@@ -91,6 +107,7 @@ export function getTemplate({
       class="select__item ${selectedClass}" 
       data-type="item"
       data-id="${item.id}"
+      tabindex="1"
     >${item.value}</li>`;
   }).join('');
 
