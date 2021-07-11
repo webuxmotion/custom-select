@@ -7,6 +7,7 @@
   <?=$this::getMeta(); ?>
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link href="/dist/styles.css" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet">
 </head>
 <body>
   <?=$content?>
