@@ -4,6 +4,7 @@ $border-color: #ccc;
 .select {
   width: 100%;
   position: relative;
+  z-index: 100;
 
   &.is-open {
     .select__dropdown {
@@ -12,6 +13,23 @@ $border-color: #ccc;
     .select__input {
       border-bottom: none;
     }
+    .select__arrow {
+      transform: rotate(180deg);
+    }
+    .select__backdrop {
+      display: block;
+    }
+  }
+
+  &__backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: transparent;
+    z-index: -1;
+    display: none;
   }
 
   &__input {
@@ -52,6 +70,10 @@ $border-color: #ccc;
       background-color: #eee;
       cursor: pointer;
       transition: 0.15s background-color ease-in;
+    }
+
+    &.is-selected {
+      background-color: bisque;
     }
   }
 }

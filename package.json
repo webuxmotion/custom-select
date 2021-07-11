@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/tonephp/starter-kit#readme",
   "devDependencies": {
+    "@babel/plugin-proposal-private-methods": "^7.14.5",
     "file-loader": "^6.2.0",
     "sass-loader": "^10.1.1",
     "webpack": "^5.19.0",
